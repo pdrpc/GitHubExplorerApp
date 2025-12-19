@@ -1,0 +1,24 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed()">
+  <div class="header">
+    <span *ngIf="!isCollapsed()">⭐ Favoritos</span>
+    <button (click)="toggleSidebar()" class="toggle-btn">
+      {{ isCollapsed() ? '▶' : '◀' }}
+    </button>
+  </div>
+
+  <div class="list">
+    @for (fav of repoService.favoritos(); track fav.id) {
+      <div class="item">
+        <span class="name" *ngIf="!isCollapsed()" [title]="fav.fullName">
+          {{ fav.name }}
+        </span>
+        <button *ngIf="!isCollapsed()" (click)="remover(fav.id)" class="del-btn">
+          ✕
+        </button>
+        <span *ngIf="isCollapsed()" title="Favoritado">⭐</span>
+      </div>
+    } @empty {
+      <p class="empty" *ngIf="!isCollapsed()">Lista vazia</p>
+    }
+  </div>
+</aside>

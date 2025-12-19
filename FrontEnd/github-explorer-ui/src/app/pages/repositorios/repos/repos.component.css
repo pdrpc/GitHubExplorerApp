@@ -1,0 +1,186 @@
+/* Layout Principal */
+.repos-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f0f6fc;
+}
+
+.header p {
+  color: #8b949e;
+  margin-bottom: 2rem;
+}
+
+/* Seção de Busca */
+.search-section {
+  margin-bottom: 3rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+.input-group button {
+  padding: 0 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  background-color: #238636;
+  color: white;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-group button:hover:not(:disabled) {
+  background-color: #2ea44f;
+}
+
+.input-group button:disabled {
+  background-color: #23863680;
+  cursor: not-allowed;
+}
+
+/* --- GRID SYSTEM --- */
+.results-grid {
+  display: grid;
+  /* Cria colunas automáticas com largura mínima de 320px */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px; /* Espaço entre os cards */
+}
+
+/* --- CARD DESIGN --- */
+.repo-card {
+  background-color: #161b22; /* Cor de fundo do card (diferente do body) */
+  border: 1px solid #30363d; /* Borda sutil para definição */
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de "levantar" ao passar o mouse */
+.repo-card:hover {
+  transform: translateY(-5px);
+  border-color: #8b949e;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.repo-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #58a6ff; /* Azul link padrão do GitHub */
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.repo-title:hover {
+  text-decoration: underline;
+}
+
+.stars {
+  font-size: 0.9rem;
+  color: #f0f6fc;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.repo-desc {
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Ocupa o espaço disponível para empurrar o footer */
+  
+  /* Limita a descrição a 3 linhas para manter os cards alinhados */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Rodapé do Card */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #21262d; /* Linha separadora sutil */
+}
+
+.score-badge {
+  font-size: 0.85rem;
+  color: #c9d1d9;
+  background: rgba(56, 139, 253, 0.15); /* Fundo azul sutil */
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 139, 253, 0.4);
+}
+
+.fav-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fav-btn:hover {
+  background-color: #21262d;
+  border-color: #8b949e;
+}
+
+/* Estilo quando está favoritado */
+.fav-btn.is-active {
+  background-color: rgba(248, 81, 73, 0.1);
+  border-color: #f85149;
+  color: #f85149;
+}
+
+.empty-state {
+  grid-column: 1 / -1; /* Ocupa toda a largura do grid */
+  text-align: center;
+  padding: 4rem;
+  color: #8b949e;
+  border: 2px dashed #30363d;
+  border-radius: 8px;
+}

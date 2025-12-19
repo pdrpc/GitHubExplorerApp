@@ -1,0 +1,52 @@
+<div class="repos-layout">
+  <header class="header">
+    <h1>GitHub Explorer</h1>
+    <p>Encontre os repositórios mais relevantes</p>
+  </header>
+
+  <div class="search-section">
+    <div class="input-group">
+      <input 
+        [ngModel]="termoBusca()" 
+        (ngModelChange)="termoBusca.set($event)" 
+        (keyup.enter)="pesquisar()"
+        placeholder="Ex: machine learning, react, .net core...">
+      <button (click)="pesquisar()" [disabled]="carregando()">
+        {{ carregando() ? 'Buscando...' : 'Pesquisar' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="results-grid">
+    @for (repo of repositorios(); track repo.id) {
+      <div class="repo-card">
+        <div class="card-header">
+          <a [href]="repo.url" target="_blank" class="repo-title">{{ repo.name }}</a>
+          <span class="stars">⭐ {{ repo.stars }}</span>
+        </div>
+        
+        <p class="repo-desc">
+          {{ repo.description || 'Sem descrição disponível.' }}
+        </p>
+
+        <div class="card-footer">
+          <span class="score-badge">
+            Relevância: <b>{{ repo.relevanceScore }}</b>
+          </span>
+          
+          <button 
+            class="fav-btn"
+            (click)="toggleFavorito(repo)" 
+            [class.is-active]="ehFavorito(repo.id)"
+            [title]="ehFavorito(repo.id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+            {{ ehFavorito(repo.id) ? '❤️ Favorito' : '🤍 Favoritar' }}
+          </button>
+        </div>
+      </div>
+    } @empty {
+      <div class="empty-state" *ngIf="!carregando() && termoBusca()">
+        <p>Nenhum repositório encontrado para essa busca.</p>
+      </div>
+    }
+  </div>
+</div>
