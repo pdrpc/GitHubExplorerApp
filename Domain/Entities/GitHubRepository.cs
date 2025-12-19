@@ -8,8 +8,8 @@ namespace Domain.Entities
         public string Name { get; set; } = string.Empty;
         public string FullName { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public GitHubUrl HtmlUrl { get; set; }
-        public RepositoryStats Stats { get; set; } // Agrupamento de stargazers_count, forks_count, etc
+        public GitHubUrl HtmlUrl { get; set; } = null!;
+        public RepositoryStats Stats { get; set; } = null!; // Agrupamento de stargazers_count, forks_count, etc
         public bool IsFavorite { get; set; }
     }
 }

@@ -85,7 +85,7 @@ namespace Application.Services
                 repo.Name,
                 repo.FullName,
                 repo.Description,
-                repo.HtmlUrl.Value,
+                repo.HtmlUrl?.Value ?? string.Empty,
                 repo.Stats.Stars,
                 repo.Stats.Forks,
                 repo.Stats.Watchers,

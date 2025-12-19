@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A1A4D2AF-68F7-46F5-98CD-E3C3DEA2A17D}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{6252155B-BDE0-4EEB-899F-FCFADD1DF9F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationApi", "PresentationApi\PresentationApi.csproj", "{A4BE3C1C-ABA5-466A-9375-2F2ADCC81282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{60F31262-FB29-4FB3-8625-AF3BA216B2CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A4BE3C1C-ABA5-466A-9375-2F2ADCC81282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4BE3C1C-ABA5-466A-9375-2F2ADCC81282}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4BE3C1C-ABA5-466A-9375-2F2ADCC81282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F31262-FB29-4FB3-8625-AF3BA216B2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F31262-FB29-4FB3-8625-AF3BA216B2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F31262-FB29-4FB3-8625-AF3BA216B2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F31262-FB29-4FB3-8625-AF3BA216B2CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

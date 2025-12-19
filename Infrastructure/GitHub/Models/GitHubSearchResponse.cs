@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.GitHub.Models
 {
-    internal record GitHubSearchResponse(
+    public record GitHubSearchResponse(
         [property: JsonPropertyName("items")] List<GitHubRepoItem> Items
     );
 
-    internal record GitHubRepoItem(
+    public record GitHubRepoItem(
         [property: JsonPropertyName("id")] long Id,
         [property: JsonPropertyName("name")] string Name,
         [property: JsonPropertyName("full_name")] string FullName,

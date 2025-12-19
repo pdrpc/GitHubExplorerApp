@@ -21,10 +21,10 @@ builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p =>
 
 // 2. Registro das Camadas (Injeção de Dependência)
 builder.Services.AddScoped<IRelevanceService, RelevanceService>();
-builder.Services.AddScoped<IGitHubAppService, GitHubAppService>();
+builder.Services.AddScoped<IGitHubAppService, Application.Services.GitHubAppService>();
 builder.Services.AddSingleton<IFavoriteRepository, InMemoryFavoriteRepository>();
 
-builder.Services.AddHttpClient<IGithubService, GitHubService>(client =>
+builder.Services.AddHttpClient<IGithubService, Infrastructure.GitHub.Services.GitHubService>(client =>
 {
     client.BaseAddress = new Uri("https://api.github.com/");
     client.DefaultRequestHeaders.Add("User-Agent", "GitHubExplorerApp");
