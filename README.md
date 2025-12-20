@@ -17,7 +17,7 @@ A solução foi concebida para ser altamente escalável e performática, separan
 Utiliza os princípios da **Clean Architecture** para desacoplar a lógica de negócio das infraestruturas externas (GitHub API).
 
 * **Algoritmo de Relevância**: Implementado na camada de domínio para garantir que os resultados mais importantes apareçam primeiro. O cálculo segue a fórmula:
-  $$Score = (Stars \times 1.0) + (Forks \times 2.0) + (Watchers \times 0.5)$$
+  $$Score = (Stars \times 3.0) + (Forks \times 2.0) + (Watchers \times 1)$$
 * **Camadas**: Core, Application, Infrastructure e Presentation.
 * **Segurança**: Configuração de políticas de **CORS** para comunicação segura com o FrontEnd.
 
